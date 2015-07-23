@@ -9,6 +9,6 @@ The changes from the original Zotero code are quite small and apply mainly to th
 
 There are no changes to citeproc.js.
 
-The code should be working in html5 browsers. However some things might be troublesome since standards may be missing. The crucial part is in the start of the scrapping process. Unlike the current Zotero bookmarklet this new bookmarklet just grabs the current page DOM and send the head.innerHTML + body.innerHTML to a new page together with url and cookies. Then the DOM is recreated in the new page and a <base href=url> tag is added. The url and cookies are added as dataset attribute to the DOM (to keep the code as close to the current Zotero code as possible).
+The code should be working in html5 browsers. However some things might be troublesome since standards may be missing. The crucial part is in the start of the scrapping process. Unlike the current Zotero bookmarklet this new bookmarklet just grabs the current page DOM and send the head.innerHTML + body.innerHTML to a new page together with url and cookies. Then the DOM is recreated in the new page and a &lt;base href=url> tag is added. The url and cookies are added as dataset attribute to the DOM (to keep the code as close to the current Zotero code as possible).
 
 This process might break. Some tags are removed in the source text, i.e. iframe, script and style tags. That might break since this is just done with some regexp. The adding of &lt;base href=url> might not work as expected to produce absolute URLs.
