@@ -5,7 +5,7 @@ This is a test project. The purpose is to try to use Zotero JavaScript translato
 
 The status of the probject is that the code seems to be working fine, but needs more testing. And the code need to be cleaned up.
 
-The changes from the original Zotero code are quite small and apply mainly to the process of selecting translators. A drawback with this JavaScript only code is that all the nearly 500 translators must be available for selecting in JavaScript. Currently they are just thrown in one big JavaScript file, translator-idx.js (where detectWeb etc, but not doWeb is included). The size of this is nearly 380 kB, but it can be reduced to 65 kB (if detectWeb etc are excluded) and stored permanently in the users browser (using html5 manifests).
+The changes from the original Zotero code are quite small and apply mainly to the process of selecting translators. A drawback with this JavaScript only code is that all the nearly 500 translators must be available for selecting in JavaScript. Currently they are just thrown in one big JavaScript file, translator-idx.js (where detectWeb etc, but not doWeb, is included). The size of this is nearly 380 kB, but it can be reduced to 65 kB (if detectWeb etc are excluded) and stored permanently in the users browser (using html5 manifests).
 
 There are no changes to citeproc.js.
 
