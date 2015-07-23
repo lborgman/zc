@@ -1,0 +1,150 @@
+/* */
+
+* {
+    font-size: 14px;
+    box-sizing: border-box;
+}
+h1 {
+    font-size: 200%;
+}
+h2 {
+    font-size: 150%;
+}
+
+div.page {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+div.inline {
+    display: inline-block;
+}
+
+input[type=text] {
+    font-size: 16px;
+}
+.my-button {
+    -webkit-animation: click-wave 0.65s;
+    -moz-animation: click-wave 0.65s;
+    animation: click-wave 0.65s;
+    display: inline-block;
+    position: relative;
+    min-width: 80px;
+    height: 32px;
+    font-weight: normal;
+    border-radius: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
+    cursor: pointer;
+}
+
+
+/* #style-repos-note { */
+.not-ready {
+    background: yellow;
+    border: 1px solid red;
+    padding: 0 20px;
+    margin: 20px;
+    box-shadow: 8px 8px 8px #666;
+}
+#main-h1 {
+    margin-bottom: 0;
+}
+#info {
+    margin: 20px 0;
+}
+
+#style-url {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#form-div {
+    background: #D4EFA7;
+    padding: 20px;
+}
+#bm-output {
+    background: #FFA500;
+    padding: 20px;
+    margin-top: 20px;
+}
+#bm-container {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+#bib-out-div {
+    background: #D4EFA7;
+    padding: 20px;
+    overflow: auto;
+}
+#bib-links-div {
+    display: block;
+    color: maroon;
+    margin-top: 6px;
+}
+#bib-links-div * {
+    color: maroon;
+}
+
+#bib-outnew-div {
+    background: #C4F5F3;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#bib-h2 {
+    margin-bottom: 0;
+}
+#style-name {
+    margin-bottom: 10px;
+    color: #aaa;
+}
+#scrap-time-div {
+    margin-top: 20px;
+    color: #aaa;
+}
+#trace {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #eee;
+}
+
+/* fix-me: click-wave gave some strange resizing at start */
+/* http://pleeease.io/play/ */
+/* @-webkit-keyframes  */
+/* click-wave { 0% { */
+/*                  width: 40px; */
+/*                  height: 40px; */
+/*                  opacity: 0.35; */
+/*                  filter: alpha(opacity=35); */
+/*                  position: relative; */
+/*              } */
+/*              100% { */
+/*                  width: 200px; */
+/*                  height: 200px; */
+/*                  margin-left: -80px; */
+/*                  margin-top: -80px; */
+/*                  opacity: 0.0; */
+/*                  filter: alpha(opacity=0); */
+/*              } */
+/* } */
+
+/* @keyframes  */
+/* click-wave { 0% { */
+/*                  width: 40px; */
+/*                  height: 40px; */
+/*                  opacity: 0.35; */
+/*                  filter: alpha(opacity=35); */
+/*                  position: relative; */
+/*              } */
+/*              100% { */
+/*                  width: 200px; */
+/*                  height: 200px; */
+/*                  margin-left: -80px; */
+/*                  margin-top: -80px; */
+/*                  opacity: 0.0; */
+/*                  filter: alpha(opacity=0); */
+/*              } */
+/* } */
+

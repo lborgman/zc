@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1" >
+    <title>ZC bookmarklet setup</title>
+
+    <meta name="dc:title" content="ZC bookmarklet setup" />
+    <meta name="dc:author" content="Lennart Borgman" />
+    <meta name="dc:description" content="This is the setup page for the ZC bookmarklet." />
+    <meta name="dc:keywords" content="zotero citeproc bookmarklet" />
+
+    <meta property="og:title" content="ZC bookmarklet setup" />
+    <meta property="og:description" content="This is the setup page for the ZC bookmarklet." />
+    <meta property="og:type" content="product" />
+
+    <link rel="stylesheet" href="citeproc-bm.css">
+
+    <script src="../js/log-it.js" defer></script>
+    <script src="../js/mk-elt.js" defer></script>
+    <script src="../js/promise-load.js" defer></script>
+    <script src="../js/xhragent.js" defer id="xhragent-js"></script>
+    <script src="citeproc-bm-setup.js" defer></script>
+    <!-- <script src="get-cite-data.js" defer id="get-data-js"></script> -->
+
+    <!-- <script src="temp.js"></script> -->
+    <!-- <script src="citeproc-js/demo/citations.json"></script> -->
+
+  </head>
+  <body>
+    <div class="page">
+      <div class="header">
+        <h1>ZC reference bookmarklet setup</h1>
+      </div>
+      <div class="main">
+        <p>
+          This bookmarklet can be used to get a bibliography from the web page you are visiting.
+        </p>
+        <p>
+          You choose the bibliography style to use below.
+          The style must be defined in a CSL (Citation Style Language) file.
+          You can find such style files with the instructions here:
+          <a href="http://citationstyles.org/styles/" target="_blank">Styles | CitationStyles.org</a>
+        </p>
+        <div class="not-ready">
+          <p>
+            Note: The style repositories above unfortunately can't be used from here currently. For testing please use this CSL file:
+            <a id="test-csl-link" href="https://dl.dropboxusercontent.com/u/848981/it/citep/apa.csl">APA style</a>
+            <i>(This is already entered below.)</i>
+          </p>
+          <p>
+            Note 2: The bookmarklet part is ready, but the output part is not quite ready yet.
+          </p>
+        </div>
+        <div id="form-div"></div>
+        <p>
+          Some technical info: The bookmarklet uses the Zotero
+          translators to grab data from web pages and citeproc-js to
+          show it.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

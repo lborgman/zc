@@ -1,0 +1,1 @@
+curl --data "citation-type=RIS&zone=exportDropDown&export=Export&format=cite-abs" "http://www.sciencedirect.com/science?_ob=DownloadURL&_method=finish&_eidkey=1-s2.0-S0003347208003631&count=1&_docType=FLA&md5=437cdfa156da5e31074edf288080bbf7"

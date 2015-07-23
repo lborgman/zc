@@ -1,0 +1,164 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1" >
+    <title>ZC reference bookmarklet priv iframe</title>
+
+    <link rel="stylesheet" type="text/css" href="citeproc-bm.css" />
+
+    <script src="../js/log-it.js"></script>
+    <script src="../js/mk-elt.js"></script>
+    <script src="../js/promise-load.js"></script>
+    <script src="../js/xhragent.js" id="xhragent-js"></script>
+    <script src="citeproc-js/xmldom.js"></script>
+    <script src="citeproc-js/citeproc.js"></script>
+    <!-- <script src="get-cite-data.js"></script> -->
+
+    <script src="trans/translators-idx.js"></script>
+    <script src="trans/zscrap.js"></script>
+    <script src="typeMap-z2csl.js"></script>
+
+    <!-- <script src="citeproc-bm-show.js"></script> -->
+
+
+
+    <!-- ===================== Begin Zotero libs ========================== -->
+    <!-- from build.sh -->
+    <!-- SRCDIR="$CWD/src" -->
+    <!-- EXTENSION_XPCOM_DIR="$SRCDIR/zotero/chrome/content/zotero/xpcom" -->
+
+
+    <!-- <script src="../zotero-connectors/src/common/zotero.js"></script> -->
+    <script src="trans/z/src/common/zotero.js"></script>
+
+    <!-- BOOKMARKLET_COMMON_INCLUDE= -->
+    <!-- "$SRCDIR/bookmarklet/zotero_config.js" --><script src="trans/z/src/bookmarklet/zotero_config.js"></script>
+    <!-- "$EXTENSION_XPCOM_DIR/debug.js" --><script src="trans/z/xpcom/debug.js"></script>
+    <!-- "$SRCDIR/common/errors_webkit.js" --><script src="trans/z/src/common/errors_webkit.js"></script>
+    <!-- "$SRCDIR/common/http.js" --><script src="trans/z/src/common/http.js"></script>
+    <!-- "$EXTENSION_XPCOM_DIR/xregexp/xregexp.js" --><script src="trans/z/xpcom/xregexp/xregexp.js"></script>
+    <!-- "$EXTENSION_XPCOM_DIR/xregexp/addons/build.js" --><script src="trans/z/xpcom/xregexp/addons/build.js"></script>
+    <!-- "$EXTENSION_XPCOM_DIR/xregexp/addons/matchrecursive.js" --><script src="trans/z/xpcom/xregexp/addons/matchrecursive.js"></script>
+    <!-- fix-me: unicode things left out -->
+    <!-- "$EXTENSION_XPCOM_DIR/xregexp/addons/unicode/unicode-base.js" -->
+    <!-- "$EXTENSION_XPCOM_DIR/xregexp/addons/unicode/unicode-categories.js" -->
+    <!-- "$EXTENSION_XPCOM_DIR/xregexp/addons/unicode/unicode-zotero.js" -->
+    <!-- "$EXTENSION_XPCOM_DIR/utilities.js" --><script src="trans/z/xpcom/utilities.js"></script>
+    <!-- "$SRCDIR/bookmarklet/messages.js") --><script src="trans/z/src/bookmarklet/messages.js"></script>
+
+
+
+
+    <!-- <\!-- BOOKMARKLET_INJECT_INCLUDE= -\-> -->
+    <!-- <\!-- "$EXTENSION_XPCOM_DIR/connector/cachedTypes.js" -\-><script src="trans/z/xpcom/connector/cachedTypes.js"></script> -->
+    <!-- <\!-- "$EXTENSION_XPCOM_DIR/date.js" -\-><script src="trans/z/xpcom/date.js"></script> -->
+    <!-- <\!-- "$SRCDIR/common/inject/http.js" -\-><script src="trans/z/src/common/inject/http.js"></script> -->
+    <!-- <\!-- "$EXTENSION_XPCOM_DIR/openurl.js" -\-><script src="trans/z/xpcom/openurl.js"></script> -->
+    <!-- <\!-- "$SRCDIR/common/inject/progressWindow.js" -\-><script src="trans/z/src/common/inject/progressWindow.js"></script> -->
+    <!-- <\!-- "$EXTENSION_XPCOM_DIR/rdf/init.js" -\-><script src="trans/z/xpcom/rdf/init.js"></script> -->
+    <!-- <\!-- "$EXTENSION_XPCOM_DIR/rdf/uri.js" -\-><script src="trans/z/xpcom/rdf/uri.js"></script> -->
+    <!-- <\!-- "$EXTENSION_XPCOM_DIR/rdf/term.js" -\-><script src="trans/z/xpcom/rdf/term.js"></script> -->
+    <!-- <\!-- "$EXTENSION_XPCOM_DIR/rdf/identity.js" -\-><script src="trans/z/xpcom/rdf/identity.js"></script> -->
+    <!-- <\!-- "$EXTENSION_XPCOM_DIR/rdf/match.js" -\-><script src="trans/z/xpcom/rdf/match.js"></script> -->
+    <!-- <\!-- "$EXTENSION_XPCOM_DIR/rdf/rdfparser.js" -\-><script src="trans/z/xpcom/rdf/rdfparser.js"></script> -->
+    <!-- <\!-- "$EXTENSION_XPCOM_DIR/translation/translate.js" -\-><script src="trans/z/xpcom/translation/translate.js"></script> -->
+    <!-- <\!-- "$EXTENSION_XPCOM_DIR/connector/translate_item.js" -\-><script src="trans/z/xpcom/connector/translate_item.js"></script> -->
+    <!-- <\!-- "$SRCDIR/common/inject/translate_inject.js" -\-><script src="trans/z/src/common/inject/translate_inject.js"></script> -->
+    <!-- <\!-- "$SRCDIR/common/inject/translator.js" -\-><script src="trans/z/src/common/inject/translator.js"></script> -->
+    <!-- <\!-- "$EXTENSION_XPCOM_DIR/connector/typeSchemaData.js" -\-><script src="trans/z/xpcom/connector/typeSchemaData.js"></script> -->
+    <!-- <\!-- "$EXTENSION_XPCOM_DIR/utilities_translate.js" -\-><script src="trans/z/xpcom/utilities_translate.js"></script> -->
+    <!-- <\!-- "$SRCDIR/bookmarklet/messaging_inject.js" -\-><script src="trans/z/src/bookmarklet/messaging_inject.js"></script> -->
+    <!-- <\!-- "$SRCDIR/bookmarklet/inject_base.js") -\-><script src="trans/z/src/bookmarklet/inject_base.js"></script> -->
+    <!-- <\!-- INJECT_INCLUDE_LAST -\-><\!-- <script src="trans/z/src/common/inject/inject.js"></script> -\-> -->
+
+
+
+    <!-- BOOKMARKLET_IFRAME_INCLUDE= -->
+    <!-- "$EXTENSION_XPCOM_DIR/connector/connector.js" --><script src="trans/z/xpcom/connector/connector.js"></script>
+    <!-- "$EXTENSION_XPCOM_DIR/translation/tlds.js" --><script src="trans/z/xpcom/translation/tlds.js"></script>
+    <!-- "$SRCDIR/bookmarklet/translator.js" --><script src="trans/z/src/bookmarklet/translator.js"></script>
+    <!-- "$SRCDIR/common/messaging.js" --><script src="trans/z/src/common/messaging.js"></script>
+    <!-- "$SRCDIR/bookmarklet/iframe_base.js" --><script src="trans/z/src/bookmarklet/iframe_base.js"></script>
+    <!-- ===================== End Zotero libs ========================== -->
+
+
+    <!-- Unfortunately this breaks debugging in Chrome (since Chrome debugger does not find all files). -->
+    <!-- <script defer> -->
+    <!--   // http://www.html5rocks.com/en/tutorials/speed/script-loading/ -->
+    <!--   var singleScript = [ "citeproc-bm-show-cld.js"]; -->
+    <!--   var multipleScripts = -->
+    <!-- [ -->
+    <!--     "../js/log-it.js", -->
+    <!--     "../js/promise-load.js", -->
+    <!--     "../js/xhragent.js", -->
+    <!--     "citeproc-js/xmldom.js", -->
+    <!--     "citeproc-js/citeproc.js", -->
+    <!--     "get-cite-data.js", -->
+        
+    <!--     "trans/translators-idx.js", -->
+    <!--     "trans/common.js", -->
+    <!--     "trans/inject.js", -->
+    <!--     "trans/zscrap.js", -->
+        
+    <!--     "citeproc-bm-show.js", -->
+    <!-- ]; -->
+    <!-- var useCompiled = false; -->
+    <!-- var myScripts = useCompiled ? singleScript : multipleScripts; -->
+    <!-- myScripts.forEach(function(src) { -->
+    <!--       var script = document.createElement('script'); -->
+    <!--       script.src = src; -->
+    <!--       script.async = false; -->
+    <!--       document.head.appendChild(script); -->
+    <!--   }); -->
+    <!-- </script> -->
+  </head>
+
+  <body xonload="renderBib()">
+    <div class="page">
+      <div class="not-ready">
+        <p>
+          Please notice that this page is not ready and the bibliography may be incorrect.
+        </p>
+        <p>
+          Scraping with Zotero translators needs more testing.
+          And converting from Zotero format to citeproc format is maybe not entirely correct yet.
+        </p>
+      </div>
+      <h1 id="main-h1">ZC reference bookmarklet priv iframe</h1>
+      <div>
+        <i>You can get the bookmarklet <a href="citeproc-bm-setup.html" target="_blank">here</a>.</i>
+      </div>
+      <div id="info"></div>
+      <!-- <hr/> -->
+
+      <div>
+        <label>
+          <input type="checkbox" id="ids-as-url" name="ids-as-url" checked>
+          Add DOI etc as links (useful for posting in online discussions)
+        </label>
+      </div>
+
+
+      <h2 id="bib-h2">Bibliography</h2>
+      <div id="style-name"></div>
+
+      <div id="bib-out-div">
+        <div id="bib-ref-div">
+          Loading page...
+        </div>
+        <div id="bib-links-div">...links for simple posting etc (not ready yet)...</div>
+      </div>
+      <div id="scrap-time-div"></div>
+
+      <div id="trace">
+        <p>
+          Just a trace output for helping me develop this, of zotero => citeproc items. (This is for mobiles mostly, see also console.log)
+        </p>
+        <div id="bib-outnew-div">Loading...</div>
+      </div>
+
+    </div>
+
+
+  </body>
+</html>

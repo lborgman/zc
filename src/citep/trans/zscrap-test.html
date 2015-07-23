@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Test zscrap</title>
+    <meta name="viewport" content="initial-scale=1" >
+
+
+  </head>
+  <body>
+    <h1>Test zscrap</h1>
+
+
+    <script src="../../js/log-it.js" defer></script>
+    <script src="../../js/xhragent.js" defer id="xhragent-js"></script>
+    <script src="../../js/promise-load.js" defer></script>
+    <script src="../citeproc-js/xmldom.js" defer></script>
+    <script src="../citeproc-js/citeproc.js" defer></script>
+    <!-- <script src="../get-cite-data.js" defer></script> -->
+
+
+    <script src="translators-idx.js"></script>
+    <script src="zscrap.js"></script>
+    <script src="zscrap-testdata.js"></script>
+
+    <script src="../typeMap-z2csl.js"></script>
+
+
+    <!-- ===================== Begin Zotero libs ========================== -->
+    <!-- from build.sh -->
+    <!-- SRCDIR="$CWD/src" -->
+    <!-- EXTENSION_XPCOM_DIR="$SRCDIR/zotero/chrome/content/zotero/xpcom" -->
+
+
+    <script src="../../zotero-connectors/src/common/zotero.js"></script>
+
+    <!-- BOOKMARKLET_COMMON_INCLUDE= -->
+    <!-- "$SRCDIR/bookmarklet/zotero_config.js" --><script src="z/src/bookmarklet/zotero_config.js"></script>
+    <!-- "$EXTENSION_XPCOM_DIR/debug.js" --><script src="z/xpcom/debug.js"></script>
+    <!-- "$SRCDIR/common/errors_webkit.js" --><script src="z/src/common/errors_webkit.js"></script>
+    <!-- "$SRCDIR/common/http.js" --><script src="z/src/common/http.js"></script>
+    <!-- "$EXTENSION_XPCOM_DIR/xregexp/xregexp.js" --><script src="z/xpcom/xregexp/xregexp.js"></script>
+    <!-- "$EXTENSION_XPCOM_DIR/xregexp/addons/build.js" --><script src="z/xpcom/xregexp/addons/build.js"></script>
+    <!-- "$EXTENSION_XPCOM_DIR/xregexp/addons/matchrecursive.js" --><script src="z/xpcom/xregexp/addons/matchrecursive.js"></script>
+    <!-- fix-me: unicode things left out -->
+    <!-- "$EXTENSION_XPCOM_DIR/xregexp/addons/unicode/unicode-base.js" -->
+    <!-- "$EXTENSION_XPCOM_DIR/xregexp/addons/unicode/unicode-categories.js" -->
+    <!-- "$EXTENSION_XPCOM_DIR/xregexp/addons/unicode/unicode-zotero.js" -->
+    <!-- "$EXTENSION_XPCOM_DIR/utilities.js" --><script src="z/xpcom/utilities.js"></script>
+    <!-- "$SRCDIR/bookmarklet/messages.js") --><script src="z/src/bookmarklet/messages.js"></script>
+
+
+
+
+    <!-- BOOKMARKLET_INJECT_INCLUDE= -->
+    <!-- "$EXTENSION_XPCOM_DIR/connector/cachedTypes.js" --><script src="z/xpcom/connector/cachedTypes.js"></script>
+    <!-- "$EXTENSION_XPCOM_DIR/date.js" --><script src="z/xpcom/date.js"></script>
+    <!-- "$SRCDIR/common/inject/http.js" --><script src="z/src/common/inject/http.js"></script>
+    <!-- "$EXTENSION_XPCOM_DIR/openurl.js" --><script src="z/xpcom/openurl.js"></script>
+    <!-- "$SRCDIR/common/inject/progressWindow.js" --><script src="z/src/common/inject/progressWindow.js"></script>
+    <!-- "$EXTENSION_XPCOM_DIR/rdf/init.js" --><script src="z/xpcom/rdf/init.js"></script>
+    <!-- "$EXTENSION_XPCOM_DIR/rdf/uri.js" --><script src="z/xpcom/rdf/uri.js"></script>
+    <!-- "$EXTENSION_XPCOM_DIR/rdf/term.js" --><script src="z/xpcom/rdf/term.js"></script>
+    <!-- "$EXTENSION_XPCOM_DIR/rdf/identity.js" --><script src="z/xpcom/rdf/identity.js"></script>
+    <!-- "$EXTENSION_XPCOM_DIR/rdf/match.js" --><script src="z/xpcom/rdf/match.js"></script>
+    <!-- "$EXTENSION_XPCOM_DIR/rdf/rdfparser.js" --><script src="z/xpcom/rdf/rdfparser.js"></script>
+    <!-- "$EXTENSION_XPCOM_DIR/translation/translate.js" --><script src="z/xpcom/translation/translate.js"></script>
+    <!-- "$EXTENSION_XPCOM_DIR/connector/translate_item.js" --><script src="z/xpcom/connector/translate_item.js"></script>
+    <!-- "$SRCDIR/common/inject/translate_inject.js" --><script src="z/src/common/inject/translate_inject.js"></script>
+    <!-- "$SRCDIR/common/inject/translator.js" --><script src="z/src/common/inject/translator.js"></script>
+    <!-- "$EXTENSION_XPCOM_DIR/connector/typeSchemaData.js" --><script src="z/xpcom/connector/typeSchemaData.js"></script>
+    <!-- "$EXTENSION_XPCOM_DIR/utilities_translate.js" --><script src="z/xpcom/utilities_translate.js"></script>
+    <!-- "$SRCDIR/bookmarklet/messaging_inject.js" --><script src="z/src/bookmarklet/messaging_inject.js"></script>
+    <!-- "$SRCDIR/bookmarklet/inject_base.js") --><script src="z/src/bookmarklet/inject_base.js"></script>
+    <!-- INJECT_INCLUDE_LAST --><!-- <script src="z/src/common/inject/inject.js"></script> -->
+
+
+
+    <!-- BOOKMARKLET_IFRAME_INCLUDE= -->
+    <!-- "$EXTENSION_XPCOM_DIR/connector/connector.js" --><script src="z/xpcom/connector/connector.js"></script>
+    <!-- "$EXTENSION_XPCOM_DIR/translation/tlds.js" --><script src="z/xpcom/translation/tlds.js"></script>
+    <!-- "$SRCDIR/bookmarklet/translator.js" --><script src="z/src/bookmarklet/translator.js"></script>
+    <!-- "$SRCDIR/common/messaging.js" --><script src="z/src/common/messaging.js"></script>
+    <!-- "$SRCDIR/bookmarklet/iframe_base.js" --><script src="z/src/bookmarklet/iframe_base.js"></script>
+    <!-- ===================== End Zotero libs ========================== -->
+
+
+
+
+  </body>
+</html>
